@@ -1,0 +1,106 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    min-height: -webkit-fill-available; /* For mobile height issues */
+    background-color: #000000;
+    font-family: 'Arial', sans-serif;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent scrolling if button goes boundary */
+}
+
+.container, .container-ask {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.container {
+    display: block;
+}
+
+.container-ask {
+    display: none;
+}
+
+h1 {
+    font-size: clamp(1.8em, 6vw, 2.5em);
+    color: #d32f2f;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: clamp(1.2em, 4vw, 1.8em);
+    min-height: 1.5em;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Allow buttons to stack if very narrow */
+}
+
+.yes-button, .no-button {
+    font-size: clamp(1.1em, 3.5vw, 1.5em);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.yes-button {
+    background-color: #4caf50;
+    color: white;
+}
+
+.no-button {
+    background-color: #f44336;
+    color: white;
+    /* transition removed or shortened for 'runaway' to feel snappier? 
+       Actually user asked for "fluid seamless animation", so transition is good.
+    */
+}
+
+.gif_container {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+#me, #us {
+    max-width: 100%;
+    height: auto;
+    max-height: 40vh; /* Don't let images take too much vertical space on mobile */
+    border-radius: 12px;
+}
+
+/* Animations */
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.wiggle {
+    animation: wiggle 0.5s ease-in-out;
+}
+
+/* Mobile specific tweaks */
+@media (max-width: 480px) {
+    .buttons {
+        gap: 10px;
+    }
+    
+    .yes-button, .no-button {
+        padding: 10px 20px;
+    }
+}
