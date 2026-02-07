@@ -15,7 +15,7 @@ let messageIndex = 0;
 let imageIndex = 1;
 
 function handleYesClick() {
-  window.location.href = "yes.html";
+  window.location.href = "pages/yes.html";
 }
 
 // Runaway button logic
@@ -72,7 +72,6 @@ if (noButton) {
   });
 }
 
-// Optional: Unlock audio on first user click anywhere if hover fails
 document.addEventListener(
   "click",
   () => {

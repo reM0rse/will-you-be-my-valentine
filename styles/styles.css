@@ -43,7 +43,7 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap; /* Allow buttons to stack if very narrow */
+    flex-wrap: wrap;
 }
 
 .yes-button, .no-button {
@@ -63,9 +63,6 @@ h2 {
 .no-button {
     background-color: #f44336;
     color: white;
-    /* transition removed or shortened for 'runaway' to feel snappier? 
-       Actually user asked for "fluid seamless animation", so transition is good.
-    */
 }
 
 .gif_container {
@@ -77,7 +74,7 @@ h2 {
 #me, #us {
     max-width: 100%;
     height: auto;
-    max-height: 40vh; /* Don't let images take too much vertical space on mobile */
+    max-height: 40vh;
     border-radius: 12px;
 }
 
